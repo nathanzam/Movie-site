@@ -1,0 +1,36 @@
+body{
+  background-image: url(./images/theater-seats.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #DC1B1B;
+}
+
+.email-input{
+  margin-left: 50px;
+}
+
+.log-in-button{
+  margin-top: 8px;
+  margin-left: 20px;
+}
+
+.fandango-logo{
+  margin-right: 50px;
+}
+
+.welcome-header{
+  text-align: center;
+}
+
+.welcome-subheader {
+  text-align: center;
+}
+
+.navbar-inverse{
+  background-color: black;
+}
+
+.navbar-fixed-bottom{
+  background-color: #C51515;
+  color: #735A5A;
+}
