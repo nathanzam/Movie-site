@@ -1,0 +1,14 @@
+body{
+  background-image: url(./images/theater-seats.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #217FE0;
+}
+
+.welcome-header{
+  text-align: center;
+}
+
+.welcome-subheader {
+  text-align: center;
+}
