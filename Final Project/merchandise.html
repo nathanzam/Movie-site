@@ -13,11 +13,39 @@
 
 <body>
   <my-header></my-header>
-  <my-footer></my-footer>
+  <!-- https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords= -->
+  <h1>Look at our wonderful merchandise</h1>
+  <div class="row">
+    <div class="container">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="list-group">
+          <!-- Products Container -->
+          <div class="list-group-item" ng-repeat="product in products">
+            <!-- Product Container -->
+            <h3>
+              {{product.name}}
+              <em class="pull-right">{{product.price | currency}}</em>
+            </h3>
+            <!-- Image gallery -->
+            <div class="gallery">
+              <img class="img img-thumbnail center-block" ng-src="{{product.images[0]}}">
+              <ul class="clearfix">
+                <li class="small-image thumbnail pull-left" ng-repeat="image in product.images">
+                  <img src="{{image}}" alt="">
+                </li>
+              </ul>
+              </di>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  <script src="./app.js" type="text/javascript"></script>
-  <script src="./partials.js"></script>
+    <my-footer></my-footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="./app.js" type="text/javascript"></script>
+    <script src="./partials.js"></script>
 
 </body>
 
