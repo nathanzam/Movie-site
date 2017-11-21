@@ -2,7 +2,12 @@ body{
   background-image: url(./images/theater-seats.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  text-align: center;
   color: #DC1B1B;
+}
+
+li {
+  list-style: none;
 }
 
 .email-input{
@@ -18,19 +23,32 @@ body{
   margin-right: 50px;
 }
 
-.welcome-header{
-  text-align: center;
-}
-
-.welcome-subheader {
-  text-align: center;
-}
-
 .navbar-inverse{
   background-color: black;
+  clear: both;
+}
+
+#shawshank-quote{
+  clear: left;
+  color: #21EA56;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .navbar-fixed-bottom{
   background-color: #C51515;
   color: #735A5A;
+}
+
+.logo-holder{
+  padding-top: 0px;
+  position: absolute;
+  left: 10px;
+}
+
+.my-logo{
+  height: 50px;
+  width: auto;
 }
