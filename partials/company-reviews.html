@@ -1,0 +1,36 @@
+<form name="reviewForm" ng-submit="reviewForm.$valid && addReview(product)" novalidate>
+  <!-- live preview -->
+  <blockquote>
+    <strong>Stars: {{review.stars}}</strong> {{review.body}}
+    <cite class="clearfix">&mdash; {{review.author}}</cite>
+  </blockquote>
+  <div ng-show="reviewForm.reviewStars.$pristine && reviewForm.reviewStars.$invalid" class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Please give us a rating (of 5 stars ¯\_(ツ)_/¯)
+  </div>
+  <div ng-show="reviewForm.reviewBody.$pristine && reviewForm.reviewBody.$invalid && reviewForm.reviewBody.$touched" class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Please leave us a review
+  </div>
+  <div ng-show="reviewForm.reviewAuthor.$dirty && reviewForm.reviewAuthor.$invalid" class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Please enter your name
+  </div>
+  <!-- Review Form -->
+  <div class="form-group">
+    <select class="form-control" ng-model="review.stars" name="reviewStars" required>
+      <option value="" disabled selected>Star Rating</option>
+      <option value="1">1 Stars</option>
+      <option value="2">2 Stars</option>
+      <option value="3">3 Stars</option>
+      <option value="4">4 Stars</option>
+      <option value="5">5 Stars</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <textarea ng-model="review.body" class="form-control" placeholder="Write short review here..." name="reviewBody" rows="5" cols="80" required></textarea>
+  </div>
+  <div class="form-group">
+    <input ng-model="review.author" class="form-control" type="text" name="reviewAuthor" placeholder="Your Name" required>
+  </div>
+  <div class="form-group clearfix">
+    <button type="submit" class="btn btn-primary pull-right" name="button" ng-disabled="reviewForm.$invalid">Submit</button>
+  </div>
+</form>

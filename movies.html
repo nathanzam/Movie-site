@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="shawshank">
 
 <head>
   <meta charset="UTF-8">
@@ -11,14 +11,49 @@
   <script scr="https://maps.googleapis.com/maps/api/js"></script>
   <link rel="stylesheet" href="./main.css">
 </head>
+<!-- Google Places API Key AIzaSyAn2JghZ1rxA0cfnJsMOaPOpGgMmej-bss -->
 
 <body>
-  <img class="col-md-offset-9 col-md-2" src="./images/fandango_light.png" alt="Powered by Fandango">
+  <my-header></my-header>
+
   <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCf1sGlkB0jh0TB_jUnLw5aDgrNQbYIea0&q=Movie+Theater,Washinton+DC" allowfullscreen></iframe>
+  <div class="row">
+    <div class="col-md-3">
+      <fieldset class="zip_code">
+        <input id="zip" class="input-field" type="number" name="zip code" maxlength="5" placeholder="Enter Zipcode">
+        <button class="submit-zip" type="submit" name="zip">Get Showtimes</button>
+      </fieldset>
+      <br>
+      <p id="poster"></p>
+    </div>
+    <!-- <div class="col-md-9">
+      <div class="theater-info">
+        <ul>
+          <h1>Movie</h1>
+          <li id="title"></li>
+          <li id="top_cast"></li>
+          <li id="directors"></li>
+          <li id="ratings"></li>
+          <li id="short_description"></li>
+        </ul>
+        <ul>
+          <li id="theater_name"></li>
+          <li id="showtime"></li>
+          <li id="quals"></li>
+        </ul>
+      </div> -->
+  </div>
+  </div>
 
 
+  <br>
+  <my-footer></my-footer>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="./app.js" type="text/javascript"></script>
+  <script src="./partials.js"></script>
+  <!-- <script src="./movie-api.js"></script> -->
+  <script src="movie2.js"></script>
+  </div>
 </body>
 
 </html>
