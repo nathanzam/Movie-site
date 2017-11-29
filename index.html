@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="shawshank">
 
 <head>
   <meta charset="UTF-8">
@@ -8,15 +8,18 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="./app.js" type="text/javascript"></script>
+  <script src="./partials.js"></script>
   <link rel="stylesheet" href="./main.css">
 </head>
 
-<body>
-  <img class="col-md-offset-9 col-md-2" src="./images/fandango_light.png" alt="Powered by Fandango">
+<body ng-controller="StoreCtrl">
+  <my-header></my-header>
   <h1 class="welcome-header">Welcome to Shawshank Revolution</h1>
   <h2 class="welcome-subheader">The Best Place for Movie Lovers</h2>
   <br>
-  <div id="myCarousel" class="carousel slide col-md-offset-2 col-md-8" data-ride="carousel">
+  <div id="myCarousel" class="row carousel slide col-md-offset-2 col-md-8" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -54,9 +57,10 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <br>
+  <p id="shawshank-quote">I guess it comes down to a simple choice:<br>Get busy living, or get busy dying. <br>&mdash; Andy Dufrene</p>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  <script src="./app.js" type="text/javascript"></script>
+  <my-footer></my-footer>
 </body>
 
 </html>

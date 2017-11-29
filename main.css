@@ -2,13 +2,66 @@ body{
   background-image: url(./images/theater-seats.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #217FE0;
+  text-align: center;
+  color: #DC1B1B;
 }
 
-.welcome-header{
-  text-align: center;
+li {
+  list-style: none;
 }
 
-.welcome-subheader {
-  text-align: center;
+.email-input{
+  margin-left: 50px;
+}
+
+.log-in-button{
+  margin-top: 8px;
+  margin-left: 20px;
+}
+
+.fandango-logo{
+  margin-right: 50px;
+}
+
+.navbar-inverse{
+  background-color: black;
+  clear: both;
+}
+
+#shawshank-quote{
+  clear: left;
+  color: #21EA56;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar-fixed-bottom{
+  background-color: #C51515;
+  color: #735A5A;
+}
+
+.logo-holder{
+  padding-top: 0px;
+  position: absolute;
+  left: 10px;
+}
+
+.my-logo{
+  height: 50px;
+  width: auto;
+}
+
+#merch-products{
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+#review-text{
+  color: #41817F;
+}
+
+#chuck-norris{
+  margin-bottom: 50px;
 }
