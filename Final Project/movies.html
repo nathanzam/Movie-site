@@ -20,36 +20,43 @@
   <div id="map"></div>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc-tHfGEkxxHeXTB56VeMYV9n6BM-BNks&libraries=places&callback=initMap">
   </script>
+  <br>
   <div class="row" ng-controller="MovieCtrl">
     <div class="col-md-4 col-md-offset-4">
       <form class="zip_code">
-        <input id="zip" class="input-field" type="number" name="zip code" maxlength="5" placeholder="Enter Zipcode">
-        <button class="submit-zip" type="submit" name="zip" onclick="codeAddress()">Get Showtimes</button>
+        <input ng-model="userInput" id="zip" class="input-field" type="number" name="zip code" maxlength="5" placeholder="Enter Zipcode">
+        <button ng-click="queryZip()" class="submit-zip" type="submit" name="zip" onclick="codeAddress()">Get Showtimes</button>
       </form>
-      <br>
     </div>
-    <div class="col-md-8 col-md-offset-2 listings-container">
+    <br>
+    <h1>Screenings within 5 miles of your Zip Code:</h1>
+    <br>
+    <div class="col-md-10 col-md-offset-1 container-fluid">
       <div class="theater-info">
+        <!-- <ul ng-repeat="movie in movies">
+          <li>{{movie.title}}</li>
+        </ul> -->
         <table class="table table-bordered table-striped">
           <tr class="table-header">
             <th>Title</th>
-            <th>Genre</th>
-            <th>Rated</th>
+            <!-- <th>Genre</th> -->
+            <!-- <th>Rated</th> -->
             <th>Theater</th>
             <th>Showtimes</th>
           </tr>
           <tr ng-repeat="movie in movies">
             <td>{{movie.title}}</td>
-            <td>{{movie.genres[0]}}</td>
-            <td>{{movie.ratings[0].code}}</td>
+            <!-- <td>{{movie.genres[0]}}</td> -->
+            <!-- <td>{{movie.ratings[0].code}}</td> -->
             <td>{{movie.showtimes[0].theatre.name}}</td>
-            <td>{{movie.showtimes[0].dateTime}}</td>
+            <td>
+              <div ng-repeat="showtime in movie.showtimes">{{showtime.dateTime | date : "M/d/yy h:mm a"}}</div>
+            </td>
           </tr>
         </table>
       </div>
     </div>
   </div>
-
 
   <br>
   <my-footer></my-footer>
@@ -58,7 +65,7 @@
   <script src="./partials.js"></script>
   <script src="./maps.js"></script>
   <!-- <script src="./movie-api.js"></script> -->
-  <script src="movie2.js"></script>
+  <!-- <script src="movie2.js"></script> -->
   </div>
 </body>
 
