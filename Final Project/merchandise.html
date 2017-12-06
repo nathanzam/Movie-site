@@ -11,8 +11,43 @@
   <link rel="stylesheet" href="./main.css">
 </head>
 
-<body>
+<body ng-controller="merchCtrl">
   <my-header></my-header>
+  <!-- https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords= -->
+  <h1>Look at our wonderful merchandise</h1>
+  <p><input type="text" ng-model="test" class="col-md-offset-5 col-md-2" placeholder="filter out merchandise"></p>
+  <div id="merch-box" class="row">
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="list-group">
+          <!-- Products Container -->
+          <div id="merch-products" class="list-group-item" ng-repeat="product in products | orderBy: '-price' | filter: test">
+            <!-- Product Container -->
+            <!-- <div class="parallax"></div> -->
+            <h3>
+              {{product.name}}
+            </h3>
+            <!-- Image gallery -->
+            <div class="gallery">
+              <img class="img img-thumbnail center-block" ng-src="{{product.images}}">
+            </div>
+            <section>
+              <div>
+                <h2>{{product.price | currency}}</h2>
+                <h3>Rating: {{product.rating}} Stars</h3>
+              </div>
+              <div>
+                <h4>Description:</h4>
+                <h5>{{product.description}}</h5>
+              </div>
+            </section>
+            <!-- <div class="parallax"></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <my-footer></my-footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>

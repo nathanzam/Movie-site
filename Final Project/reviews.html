@@ -11,8 +11,19 @@
   <link rel="stylesheet" href="./main.css">
 </head>
 
-<body>
+<body ng-controller="StoreCtrl">
   <my-header></my-header>
+  <h1>See what our Customers have to say!</h1>
+  <h2>Or add a review yourself!</h2>
+  <div class="col-md-8 col-md-offset-2" ng-repeat="product in products" id="review-text">
+    <blockquote ng-repeat="review in product.reviews">
+      <h1>Stars: {{review.stars}}</h1>
+      <p>{{review.body}}</p>
+      <cite class="clearfix">&mdash; {{review.author}}</cite>
+    </blockquote>
+    <company-reviews></company-reviews>
+  </div>
+  <img id="chuck-norris" src="https://media.giphy.com/media/oBPOP48aQpIxq/giphy.gif" alt="Chuck Norris gives a thumbs up">
   <my-footer></my-footer>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="./app.js" type="text/javascript"></script>

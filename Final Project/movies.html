@@ -11,16 +11,55 @@
   <script scr="https://maps.googleapis.com/maps/api/js"></script>
   <link rel="stylesheet" href="./main.css">
 </head>
+<!-- Google Places API Key AIzaSyAn2JghZ1rxA0cfnJsMOaPOpGgMmej-bss -->
 
 <body>
   <my-header></my-header>
-  <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCf1sGlkB0jh0TB_jUnLw5aDgrNQbYIea0&q=Movie+Theater,Washinton+DC" allowfullscreen></iframe>
+
+  <!-- <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCf1sGlkB0jh0TB_jUnLw5aDgrNQbYIea0&q=Movie+Theaters+in+potomac+md&zoom=12" allowfullscreen></iframe> -->
+  <div id="map"></div>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc-tHfGEkxxHeXTB56VeMYV9n6BM-BNks&libraries=places&callback=initMap">
+  </script>
+  <div class="row" ng-controller="MovieCtrl">
+    <div class="col-md-4 col-md-offset-4">
+      <form class="zip_code">
+        <input id="zip" class="input-field" type="number" name="zip code" maxlength="5" placeholder="Enter Zipcode">
+        <button class="submit-zip" type="submit" name="zip" onclick="codeAddress()">Get Showtimes</button>
+      </form>
+      <br>
+    </div>
+    <div class="col-md-8 col-md-offset-2 listings-container">
+      <div class="theater-info">
+        <table class="table table-bordered table-striped">
+          <tr class="table-header">
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Rated</th>
+            <th>Theater</th>
+            <th>Showtimes</th>
+          </tr>
+          <tr ng-repeat="movie in movies">
+            <td>{{movie.title}}</td>
+            <td>{{movie.genres[0]}}</td>
+            <td>{{movie.ratings[0].code}}</td>
+            <td>{{movie.showtimes[0].theatre.name}}</td>
+            <td>{{movie.showtimes[0].dateTime}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 
 
+  <br>
   <my-footer></my-footer>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="./app.js" type="text/javascript"></script>
   <script src="./partials.js"></script>
+  <script src="./maps.js"></script>
+  <!-- <script src="./movie-api.js"></script> -->
+  <script src="movie2.js"></script>
+  </div>
 </body>
 
 </html>
