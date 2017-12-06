@@ -33,21 +33,14 @@
     <br>
     <div class="col-md-10 col-md-offset-1 container-fluid">
       <div class="theater-info">
-        <!-- <ul ng-repeat="movie in movies">
-          <li>{{movie.title}}</li>
-        </ul> -->
         <table class="table table-bordered table-striped">
           <tr class="table-header">
             <th>Title</th>
-            <!-- <th>Genre</th> -->
-            <!-- <th>Rated</th> -->
             <th>Theater</th>
             <th>Showtimes</th>
           </tr>
           <tr ng-repeat="movie in movies">
             <td>{{movie.title}}</td>
-            <!-- <td>{{movie.genres[0]}}</td> -->
-            <!-- <td>{{movie.ratings[0].code}}</td> -->
             <td>{{movie.showtimes[0].theatre.name}}</td>
             <td>
               <div ng-repeat="showtime in movie.showtimes">{{showtime.dateTime | date : "M/d/yy h:mm a"}}</div>
@@ -64,8 +57,6 @@
   <script src="./app.js" type="text/javascript"></script>
   <script src="./partials.js"></script>
   <script src="./maps.js"></script>
-  <!-- <script src="./movie-api.js"></script> -->
-  <!-- <script src="movie2.js"></script> -->
   </div>
 </body>
 
